@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 //import android.support.v7.appcompat.R;
+import com.melvax.youtubeapi.model.Example;
 import com.melvax.youtubeapi.model.Item;
 import com.melvax.youtubeapi.R;
 import com.squareup.picasso.Picasso;
@@ -42,6 +43,7 @@ public class YviewHolder extends RecyclerView.ViewHolder {
         date.setText(item.getSnippet().getPublishedAt());
         description.setText(item.getSnippet().getDescription());
 
+        Picasso.with(itemView.getContext()).load(item.getSnippet().getThumbnails().getMedium().getUrl()).into(img);
 
         //Drawable d= LoadImageFromWebOperations("http://image10.bizrate-images.com/resize?sq=60&uid=2216744464");
         //img.setImageDrawable(R.drawable.yimg);    }
